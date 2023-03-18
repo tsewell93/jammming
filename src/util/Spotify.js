@@ -1,5 +1,5 @@
 const appClientID = '530cd8e3ee7c404b8c0ed9501f1b67a5';
-const redirectURI = 'http://localhost:3000/';
+const redirectURI = 'http://jammming_app_2023.surge.sh';
 let accessToken;
 
 
