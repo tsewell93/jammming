@@ -1,10 +1,12 @@
 const appClientID = '530cd8e3ee7c404b8c0ed9501f1b67a5';
-const redirectURI = 'http://jammming_app_2023.surge.sh';
+const redirectURI = 'http://localhost:3000/';
 let accessToken;
+let tokenIsExpired;
 
 
 const Spotify = {
     getAccessToken(){
+        //If we already have an access token, we dont need to conintue
         if (accessToken){
             return accessToken;
         }
@@ -26,6 +28,8 @@ const Spotify = {
             window.location = accessURL;
         }
     },
+
+
     
     search(term){
         const accessToken = Spotify.getAccessToken();
@@ -44,7 +48,8 @@ const Spotify = {
                 name: track.name,
                 artist: track.artists[0].name,
                 album: track.album.name,
-                uri: track.uri
+                uri: track.uri, 
+                preview: track.preview_url
             }));
         })
     },
@@ -75,8 +80,15 @@ const Spotify = {
                     body: JSON.stringify({uris: trackUris})
                 });
             });
-        });
+        })
+    
+    
+        
 
+    },
+
+    async playTrack(){
+        const response = await fetch ()
     }
     
 }

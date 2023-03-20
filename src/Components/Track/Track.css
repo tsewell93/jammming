@@ -23,7 +23,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 72px;
+    height: auto;
+    max-width: 60%;
   }
   
   .Track-information h3 {
